@@ -90,6 +90,8 @@ This ensures automated, repeatable and production-style execution.
 - Trained and logged a purchase likelihood model.
 - Generated business ready insights using SQL.
 
+![Job Run Timeline](images/job_run_timeline_success.png)
+
 ## Limitations & Future Work
 
 - Model performance can be improved using advanced algorithms.
