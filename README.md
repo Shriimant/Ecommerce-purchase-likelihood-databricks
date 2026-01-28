@@ -19,3 +19,82 @@ Rule based approaches fail to capture complex behavioral patterns.
 This project uses machine learning to predict purchase likelihood,
 enabling businesses to focus marketing and engagement efforts on high intent users.
 
+## Dataset
+
+- Source: E commerce behavior data from a multi category online store.
+- Time period: November 2019.
+- Type: Event level user behavior data.
+
+Each record represents a user interaction such as a view, cart addition
+or purchase, making it suitable for behavioral modeling.
+
+## Architecture
+
+The project follows a Medallion Architecture using Delta Lake:
+
+Bronze → Silver → Gold
+
+- Bronze: Raw event data ingestion.
+- Silver: Cleaned and structured event data.
+- Gold: Aggregated user level features for ML and analytics.
+
+## Data Pipeline
+
+### Bronze Layer
+- Raw CSV data ingested into Delta tables.
+- No transformations applied.
+
+### Silver Layer
+- Filtered relevant event types (view, cart, purchase).
+- Standardized timestamps.
+- Removed invalid records.
+
+### Gold Layer
+- Aggregated user level behavioral features.
+- Created ML ready dataset.
+
+## Machine Learning Approach
+
+- ML Task: Binary Classification (Purchase Likelihood).
+- Model: Logistic Regression (baseline, explainable).
+- Features:
+  - Total events
+  - View count
+  - Cart count
+  - Purchase count
+- Experiment tracking implemented using MLflow
+
+## Business Insights (SQL Analytics)
+
+SQL analytics were used to convert model outputs into actionable insights:
+
+- Identification of high intent customers.
+- Detection of users with high engagement but no purchase.
+- Conversion rate estimation.
+- Behavioral comparison between purchasers and non purchasers.
+
+## Orchestration
+
+The entire pipeline is orchestrated using Databricks Jobs with task dependencies:
+
+Bronze → Silver → Gold → SQL Analytics
+
+This ensures automated, repeatable and production-style execution.
+
+## Key Results
+
+- Successfully processed 67+ million raw events.
+- Built an automated end to end pipeline.
+- Trained and logged a purchase likelihood model.
+- Generated business ready insights using SQL.
+
+## Limitations & Future Work
+
+- Model performance can be improved using advanced algorithms.
+- Session level features could enhance prediction accuracy.
+- Real time inference and dashboards can be added in future iterations.
+
+
+
+
+
