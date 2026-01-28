@@ -81,6 +81,8 @@ Bronze → Silver → Gold → SQL Analytics
 
 This ensures automated, repeatable and production-style execution.
 
+![Pipeline DAG](images/pipeline_dag_graph.png)
+
 ## Key Results
 
 - Successfully processed 67+ million raw events.
