@@ -72,6 +72,8 @@ SQL analytics were used to convert model outputs into actionable insights:
 - Detection of users with high engagement but no purchase.
 - Conversion rate estimation.
 - Behavioral comparison between purchasers and non purchasers.
+- 
+Logistic Regression was chosen as a simple, interpretable baseline to establish a strong benchmark before exploring more complex models.
 
 ## Orchestration
 
